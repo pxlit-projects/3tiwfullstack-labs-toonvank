@@ -1,10 +1,13 @@
 package com.seshwoods;
 
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
 /**
  * Hello world!
  *
  */
-public class App 
+@SpringBootApplication
+public class OrganizationServiceApplication
 {
     public static void main( String[] args )
     {

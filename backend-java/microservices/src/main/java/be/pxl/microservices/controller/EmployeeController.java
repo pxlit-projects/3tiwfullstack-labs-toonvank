@@ -1,2 +1,4 @@
-package be.pxl.microservices.controller;public class EmployeController {
+package be.pxl.microservices.controller;
+
+public class EmployeeController {
 }
