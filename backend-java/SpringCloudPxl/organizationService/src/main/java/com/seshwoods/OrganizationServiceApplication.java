@@ -1,5 +1,6 @@
 package com.seshwoods;
 
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
@@ -11,6 +12,6 @@ public class OrganizationServiceApplication
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        SpringApplication.run(OrganizationServiceApplication.class);
     }
 }
