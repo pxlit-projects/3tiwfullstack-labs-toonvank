@@ -13,7 +13,9 @@ public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @Transient
     private Long organizationId;
+    @Transient
     private Long departmentId;
     private String name;
     private int age;
