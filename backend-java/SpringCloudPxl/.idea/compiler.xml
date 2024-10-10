@@ -10,6 +10,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="employeeService" />
+        <module name="discoveryService" />
         <module name="organizationService" />
         <module name="departmentService" />
         <module name="notificationService" />
@@ -21,6 +22,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="SpringCloudPxl" options="" />
       <module name="departmentService" options="-parameters" />
+      <module name="discoveryService" options="-parameters" />
       <module name="employeeService" options="-parameters" />
       <module name="notificationService" options="-parameters" />
       <module name="organizationService" options="-parameters" />

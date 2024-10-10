@@ -10,3 +10,21 @@ services:
       MYSQL_USER: "admin"
       MYSQL_PASSWORD: "admin"
       MYSQL_ROOT_PASSWORD: "root"
+  organizationservicedb:
+    image: mysql:latest
+    ports:
+      - "3311:3306"
+    environment:
+      MYSQL_DATABASE: "organizationservice_db"
+      MYSQL_USER: "admin"
+      MYSQL_PASSWORD: "admin"
+      MYSQL_ROOT_PASSWORD: "root"
+  departmentservicedb:
+    image: mysql:latest
+    ports:
+      - "3312:3306"
+    environment:
+      MYSQL_DATABASE: "departmentservice_db"
+      MYSQL_USER: "admin"
+      MYSQL_PASSWORD: "admin"
+      MYSQL_ROOT_PASSWORD: "root"
