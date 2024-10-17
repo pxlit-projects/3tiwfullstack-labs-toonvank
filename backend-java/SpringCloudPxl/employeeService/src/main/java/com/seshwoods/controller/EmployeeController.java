@@ -1,6 +1,8 @@
 package com.seshwoods.controller;
 
+import com.seshwoods.client.NotificationClient;
 import com.seshwoods.domain.Employee;
+import com.seshwoods.dto.NotifcationRequest;
 import com.seshwoods.service.EmployeeService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,9 +14,11 @@ import java.util.List;
 @RequestMapping("/api/employee")
 public class EmployeeController {
     private final EmployeeService employeeService;
+    private final NotificationClient notifcationClient;
 
-    public EmployeeController(EmployeeService employeeService) {
+    public EmployeeController(EmployeeService employeeService, NotificationClient notifcationClient) {
         this.employeeService = employeeService;
+        this.notifcationClient = notifcationClient;
     }
     @GetMapping("/{id}")
     public ResponseEntity<Employee> getEmployeeById(@PathVariable Long id) {
@@ -28,9 +32,15 @@ public class EmployeeController {
     }
 
     @PostMapping
-    public ResponseEntity<Employee> createEmployee(@RequestBody Employee Employee) {
+    public void createEmployee(@RequestBody Employee Employee) {
         Employee createdEmployee = employeeService.createEmployee(Employee);
-        return ResponseEntity.status(HttpStatus.CREATED).body(createdEmployee);
+
+        NotifcationRequest notifcationRequest =
+                NotifcationRequest.builder().message("Employee Created")
+                        .sender("Toon")
+                                .build();
+
+        notifcationClient.sendNotification(notifcationRequest);
     }
 
     @PutMapping("/{id}")

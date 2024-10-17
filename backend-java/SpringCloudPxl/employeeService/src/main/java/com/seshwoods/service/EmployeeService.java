@@ -23,12 +23,15 @@ public class EmployeeService {
                 .orElseThrow(() -> new ResourceNotFoundException("Employee not found with id: " + EmployeeId));
     }
 
-    public Employee updateEmployee(Long EmployeeId, Employee EmployeeDetails) {
-        Employee Employee = employeeRepository.findById(EmployeeId)
-                .orElseThrow(() -> new ResourceNotFoundException("Employee not found with id: " + EmployeeId));
-        Employee.setOrganizationId(EmployeeDetails.getOrganizationId());
-
-        return employeeRepository.save(Employee);
+    public Employee updateEmployee(Long id, Employee updatedEmployee) {
+        return employeeRepository.findById(id)
+                .map(existingEmployee -> {
+                    existingEmployee.setName(updatedEmployee.getName());
+                    existingEmployee.setAge(updatedEmployee.getAge());
+                    existingEmployee.setPosition(updatedEmployee.getPosition());
+                    return employeeRepository.save(existingEmployee);
+                })
+                .orElse(null);
     }
 
     public void deleteEmployee(Long EmployeeId) {
