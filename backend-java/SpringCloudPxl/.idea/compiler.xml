@@ -11,6 +11,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="employeeService" />
         <module name="discoveryService" />
+        <module name="configService" />
         <module name="organizationService" />
         <module name="departmentService" />
         <module name="notificationService" />
@@ -21,6 +22,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="SpringCloudPxl" options="" />
+      <module name="configService" options="-parameters" />
       <module name="departmentService" options="-parameters" />
       <module name="discoveryService" options="-parameters" />
       <module name="employeeService" options="-parameters" />
