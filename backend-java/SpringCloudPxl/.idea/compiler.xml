@@ -9,8 +9,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="employeeService" />
         <module name="discoveryService" />
+        <module name="employeeService" />
         <module name="configService" />
         <module name="organizationService" />
         <module name="departmentService" />
