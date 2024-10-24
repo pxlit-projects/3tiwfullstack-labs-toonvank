@@ -12,9 +12,10 @@
         <module name="discoveryService" />
         <module name="employeeService" />
         <module name="configService" />
+        <module name="gatewayService" />
+        <module name="notificationService" />
         <module name="organizationService" />
         <module name="departmentService" />
-        <module name="notificationService" />
       </profile>
       <profile name="disabled" enabled="true" />
     </annotationProcessing>
@@ -26,6 +27,7 @@
       <module name="departmentService" options="-parameters" />
       <module name="discoveryService" options="-parameters" />
       <module name="employeeService" options="-parameters" />
+      <module name="gatewayService" options="-parameters" />
       <module name="notificationService" options="-parameters" />
       <module name="organizationService" options="-parameters" />
     </option>
